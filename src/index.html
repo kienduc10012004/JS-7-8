@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS - Buổi_9-10</title>
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body class="py-5">
+    <main class="bg-blue-200 w-2xl mx-auto px-20 py-10 rounded-2xl">
+        <h1 class="text-red-300 font-bold text-xl text-center mb-5">BÀI TẬP JS -- BUỔI 7_8 -- THAO TÁC MẢNG</h1>
+        <label class="block mb-3  text-gray-400 font-bold">Giá trị của mảng:</label>
+        <div class="input-wrap flex items-center justify-between mb-1">
+            <input 
+            type="number"
+            id="input-mang" 
+            placeholder="Mời nhập giá trị n cho mảng"
+            class="input-mang w-2xs outline-none p-3 border border-gray-400 rounded-lg text-gray-500">
+            <div class="w-0.5 border border-gray-400 rounded-xl h-10 bg-gray-400"></div>
+            <div class="btn-add-remove flex gap-3"> 
+                <button class="btn-add bg-amber-200 py-2 px-3 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Thêm</button>
+                <button class="btn-remove bg-amber-200 py-2 px-5 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Xóa</button>
+            </div>
+        </div>
+        <p class="err-input-mang text-red-500 hidden">*Hãy nhập giá trị!</p>
+        <p class="bg-white shadow-2xs w-full p-3 rounded-lg text-gray-400 mb-5 mt-3" id="output-mang">Mảng đã nhập: </p>
+        <hr class="mb-5 text-gray-400 font-bold">
+        <!-- 1 -->
+        <p class="bg-white shadow-2xs w-full p-4 rounded-lg text-gray-500 z-10" id="bai1">1 - Tổng số dương</p>
+        <div class="bg-white mb-5 rounded-b-lg p-4 transition-all duration-300 hidden" id="show-bai1">
+          <div class="btn-handle-wrap flex items-center gap-5">
+            <button class="btn-bai1 bg-amber-200 py-2 px-3 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Tính tổng các số dương</button>
+            <p class="err-show-bai1 hidden text-red-500">*Mảng chưa có giá trị!</p>
+          </div>
+          <p class="show-result-bai1 text-gray-500 mt-5 bg-gray-200 p-3 rounded-lg">Mảng chưa có giá trị</p>
+        </div>
+        
+        <!-- 2 -->
+        <p class="bg-white shadow-2xs w-full p-4 rounded-lg text-gray-500 mt-2" id="bai2">2 - Đếm số dương</p>
+        <div class="bg-white hidden mb-5 rounded-b-lg p-4" id="show-bai2">
+          <div class="btn-handle-wrap flex items-center gap-5">
+            <button class="btn-bai2 bg-amber-200 py-2 px-3 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Đếm số dương</button>
+            <p class="err-show-bai2 hidden text-red-500">*Mảng chưa có giá trị!</p>
+          </div>
+          <p class="show-result-bai2 text-gray-500 mt-5 bg-gray-200 p-3 rounded-lg">Mảng chưa có giá trị</p>
+        </div>
+
+        <!-- 3 -->
+        <p class="bg-white shadow-2xs w-full p-4 rounded-lg text-gray-500 mt-2" id="bai3">3 - Tìm số nhỏ nhất</p>
+        <div class="bg-white hidden mb-5 rounded-b-lg p-4" id="show-bai3">
+          <div class="btn-handle-wrap flex items-center gap-5">
+            <button class="btn-bai3 bg-amber-200 py-2 px-3 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Tìm số nhỏ nhất</button>
+            <p class="err-show-bai3 hidden text-red-500">*Mảng chưa có giá trị!</p>
+          </div>
+          <p class="show-result-bai3 text-gray-500 mt-5 bg-gray-200 p-3 rounded-lg">Mảng chưa có giá trị</p>
+        </div>
+        <p class="err-show-bai3 text-red-500 hidden mb-5">*Mảng chưa có giá trị!</p>
+
+        <!-- 4 -->
+        <p class="bg-white shadow-2xs w-full p-4 rounded-lg text-gray-500 mt-2" id="bai4">4 - Tìm số dương nhỏ nhất</p>
+        <div class="bg-white hidden mb-5 rounded-b-lg p-4" id="show-bai4">
+          <div class="btn-handle-wrap flex items-center gap-5">
+            <button class="btn-bai4 bg-amber-200 py-2 px-3 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Tìm số dương nhỏ nhất</button>
+            <p class="err-show-bai4 hidden text-red-500">*Mảng chưa có giá trị!</p>
+          </div>
+          <p class="show-result-bai4 text-gray-500 mt-5 bg-gray-200 p-3 rounded-lg">Mảng chưa có giá trị</p>
+        </div>
+        <p class="err-show-bai4 text-red-500 hidden mb-5">*Mảng chưa có giá trị!</p>
+
+        <!-- 5 -->
+        <p class="bg-white shadow-2xs w-full p-4 rounded-lg text-gray-500 mt-2" id="bai5">5 - Tìm số chẵn cuối cùng</p>
+        <div class="bg-white hidden mb-5 rounded-b-lg p-4" id="show-bai5">
+          <div class="btn-handle-wrap flex items-center gap-5">
+            <button class="btn-bai5 bg-amber-200 py-2 px-3 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Tìm số chẵn cuối cùng</button>
+            <p class="err-show-bai5 hidden text-red-500">*Mảng chưa có giá trị!</p>
+          </div>
+          <p class="show-result-bai5 text-gray-500 mt-5 bg-gray-200 p-3 rounded-lg">Mảng chưa có giá trị</p>
+        </div>
+        <p class="err-show-bai5 text-red-500 hidden mb-5">*Mảng chưa có giá trị!</p>
+
+        <!-- 6 -->
+        <p class="bg-white shadow-2xs w-full p-4 rounded-lg text-gray-500 mt-2" id="bai6">6 - Đổi chỗ</p>
+        <div class="bg-white hidden mb-5 rounded-b-lg p-4" id="show-bai6">
+          <div class="input-bai6-wrap flex justify-between">
+            <div class="combo-inp-wrap">
+              <label for="vitri1" class="block mb-2 text-gray-500">Vị trí 1</label>
+              <input type="number" class="outline-none border border-gray-400 rounded-lg p-2 w-58" id="vitri1" placeholder="Nhập vị trí 1">
+              <p class="err-vitri1-bai6 text-red-500 hidden">*Chưa nhập vị trí 1!</p>
+            </div>
+            
+            <div class="combo-inp-wrap">
+              <label for="vitri2" class="block mb-2 text-gray-500">Vị trí 2</label>
+              <input type="number" class="outline-none border border-gray-400 rounded-lg p-2 w-58" id="vitri2" placeholder="Nhập vị trí 2">
+              <p class="err-vitri2-bai6 text-red-500 hidden">*Chưa nhập vị trí 2!</p>
+            </div>
+          </div>
+          <div class="btn-handle-wrap flex items-center gap-5 mt-3">
+            <button class="btn-doi cursor-pointer hover:bg-amber-100 bg-amber-200 px-5 py-2 rounded-xl text-gray-400 font-bold transition-all duration-300">Đổi</button>
+            <p class="err-show-bai6 text-red-500 hidden">*Mảng chưa có giá trị!</p>
+          </div>
+          <p class="bg-gray-200 shadow-2xs w-full px-3 py-3 rounded-lg text-gray-500 mt-3" id="show-result-bai6">Mảng chưa có giá trị</p>
+        </div>
+
+        <!-- 7 -->
+        <p class="bg-white shadow-2xs w-full p-4 rounded-lg text-gray-500 mt-2" id="bai7">7 - Sắp xếp tăng dần</p>
+        <div class="bg-white hidden mb-5 rounded-b-lg p-4" id="show-bai7">
+          <div class="btn-handle-wrap flex items-center gap-5">
+            <button class="btn-bai7 bg-amber-200 py-2 px-3 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Sắp xếp mảng tăng dần</button>
+            <p class="err-show-bai7 hidden text-red-500">*Mảng chưa có giá trị!</p>
+          </div>
+          <p class="show-result-bai7 text-gray-500 mt-5 bg-gray-200 p-3 rounded-lg">Mảng chưa có giá trị</p>
+        </div>
+
+        <!-- 8 -->
+        <p class="bg-white shadow-2xs w-full p-4 rounded-lg text-gray-500 mt-2" id="bai8">8 - Tìm số nguyên tố đầu tiên</p>
+        <div class="bg-white hidden mb-5 rounded-b-lg p-4" id="show-bai8">
+          <div class="btn-handle-wrap flex items-center gap-5">
+            <button class="btn-bai8 bg-amber-200 py-2 px-3 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Tìm số nguyên tố đầu tiên</button>
+            <p class="err-show-bai8 hidden text-red-500">*Mảng chưa có giá trị!</p>
+          </div>
+          <p class="show-result-bai8 text-gray-500 mt-5 bg-gray-200 p-3 rounded-lg">Mảng chưa có giá trị</p>
+        </div>
+
+        <!-- 9 -->
+        <p class="bg-white shadow-2xs w-full p-4 rounded-lg text-gray-500 mt-2" id="bai9">9 - Đếm số nguyên</p>
+        <div class="bg-white hidden mb-5 rounded-b-lg p-4" id="show-bai9">
+          <div class="btn-handle-wrap flex items-center gap-5">
+            <button class="btn-bai9 bg-amber-200 py-2 px-3 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Đếm số nguyên</button>
+            <p class="err-show-bai9 hidden text-red-500">*Mảng chưa có giá trị!</p>
+          </div>
+          <p class="show-result-bai9 text-gray-500 mt-5 bg-gray-200 p-3 rounded-lg">Mảng chưa có giá trị</p>
+        </div>
+        
+        <!-- 10 -->
+        <p class="bg-white shadow-2xs w-full p-4 rounded-lg text-gray-500 mt-2" id="bai10">10 - So sánh số lượng số âm và 
+        dương</p>
+        <div class="bg-white hidden mb-5 rounded-b-lg p-4" id="show-bai10">
+          <div class="btn-handle-wrap flex items-center gap-5">
+            <button class="btn-bai10 bg-amber-200 py-2 px-3 rounded-xl text-gray-400 font-bold cursor-pointer hover:bg-amber-100 transition-all duration-300">Đếm số nguyên</button>
+            <p class="err-show-bai10 hidden text-red-500">*Mảng chưa có giá trị!</p>
+          </div>
+          <p class="show-result-bai10 text-gray-500 mt-5 bg-gray-200 p-3 rounded-lg">Mảng chưa có giá trị</p>
+        </div>
+    </main>
+    <!-- script JS -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
