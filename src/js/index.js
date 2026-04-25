@@ -81,7 +81,7 @@ const el = {
 let arr = [];
 
 // Sự kiên bấm nút thêm:
-el.btnAdd.addEventListener('click', () => {
+const handleAdd = () => {
     let inputArrValue = el.inputArr.value;
 
     if (!el.inputArr.validity.valid) {
@@ -102,6 +102,14 @@ el.btnAdd.addEventListener('click', () => {
     el.errInputArr.classList.add("hidden");
     el.inputArr.value = ""; 
     el.inputArr.focus();
+}
+
+el.btnAdd.addEventListener('click', handleAdd);
+
+el.inputArr.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        handleAdd();
+    }
 });
 
 // Sự kiện bấm nút xóa:
